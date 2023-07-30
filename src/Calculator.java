@@ -7,7 +7,7 @@ public class Calculator {
         String NOT_FORMAT_MATH = "т.к. формат математической операции не удовлетворяет заданию - два операнда и один оператор (+, -, /, *)";
         String NOT_ROM_OTRIC = "т.к. в римской системе нет отрицательных чисел и нуля";
         String NOT_TWO_SS = "т.к. используются одновременно разные системы счисления";
-        String NOT_SINGLE_DIGITS = "т.к. используются двухзначные числа";
+        String NOT_SINGLE_DIGITS = "т.к. используются неверные числа";
 
         int operIndex = -1, operCount = 0;
         Roman roman = new Roman();
@@ -49,14 +49,14 @@ public class Calculator {
                     if ((operIndex == 1) && (a <= b)) {
                         throw new IllegalArgumentException(NOT_ROM_OTRIC);
                     }
-                    if ((a / 10 > 0) | (b / 10 > 0) ) {
+                    if ((a < 10) | (b < 10) ) {
                         throw new IllegalArgumentException(NOT_SINGLE_DIGITS);
                     }
 
                 } else { //иначе переводим операнды из выражения - строки в целочисленные
                     a = Integer.parseInt(num[0]);
                     b = Integer.parseInt(num[1]);
-                    if ((a / 10 > 0) | (b / 10 > 0) ) {
+                    if ((0 < a) | (a < 10) | (0 < b) | (b < 10)) {
                         throw new IllegalArgumentException(NOT_SINGLE_DIGITS);
                     }
                 }
