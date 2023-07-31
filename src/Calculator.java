@@ -56,7 +56,7 @@ public class Calculator {
                 } else { //иначе переводим операнды из выражения - строки в целочисленные
                     a = Integer.parseInt(num[0]);
                     b = Integer.parseInt(num[1]);
-                    if ((0 < a) | (a < 10) | (0 < b) | (b < 10)) {
+                    if ((0 >= a) | (a > 10) | (0 >= b) | (b > 10)) {
                         throw new IllegalArgumentException(NOT_SINGLE_DIGITS);
                     }
                 }
