@@ -49,7 +49,7 @@ public class Calculator {
                     if ((operIndex == 1) && (a <= b)) {
                         throw new IllegalArgumentException(NOT_ROM_OTRIC);
                     }
-                    if ((a < 10) | (b < 10) ) {
+                    if ((0 >= a) | (a > 10) | (0 >= b) | (b > 10)) {
                         throw new IllegalArgumentException(NOT_SINGLE_DIGITS);
                     }
 
